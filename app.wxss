@@ -1,0 +1,22 @@
+/**app.wxss**/
+@import 'dist/common/index.wxss';
+@import 'iconfont/iconfont.wxss';
+
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 70rpx;
+  /* justify-content: space-between; */
+  /* padding: 50rpx 0; 
+  box-sizing: border-box; */
+}
+.head-top{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1rpx;
+  background: #D8D8D8;
+}

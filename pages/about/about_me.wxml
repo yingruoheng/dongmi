@@ -1,0 +1,10 @@
+
+<view class="container">
+  <view class='zan-panel-title'>关于我们</view>
+  <view class='zan-panel'>
+    <view class="zan-font-14" style="padding: 15px;">
+      <text>精选的视界</text>
+    </view>
+  </view>
+  
+</view>

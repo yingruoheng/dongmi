@@ -1,0 +1,6 @@
+
+<import src ="../template/template.wxml"/>
+<view class='interst-List' wx:if='{{posts[0].articleId == 0 || posts[0].articleId == null || posts[0].articleId == ""}}'>
+  <view>目前还没有关注对象</view>
+</view>
+  <template is="recommend-interest" data="{{lists:posts, now:now}}"/>

@@ -1,0 +1,55 @@
+<view class="head-top"></view>
+<view class='container'>
+  <view class='content'>
+    <text class='circle-font'>课业培训</text>
+
+    <view class='content-array'>
+      <view class='content-block'  bindtap='switchToTrain' >
+      <image src='../../images/icon/train2.png' class='photo'></image>
+      <text class='content-font'>开课啦</text>
+    </view>
+
+    <view class='content-block' bindtap='switchToTask' >
+        <image src='../../images/icon/task11.png' class='photo'></image>
+        <text class='content-font'>留作业</text>
+      </view>
+    </view>
+  </view>
+
+<view class='switch1'></view>
+  <view class='content' >
+    <text class='circle-font'>工作人事</text>
+    <view class='content-block'  bindtap='switchToWeekly'>
+      <image src='../../images/icon/weekly11.png' class='photo'></image>
+        <text class='content-font'>写周报</text>
+      </view>
+  </view>
+
+  <!-- <view class='content-block' bindtap='switchToWeekly' >
+    <image src='../../images/icon/weekly11.png' class='photo' ></image>
+      <text class='content-font'>写周报</text>
+    </view> -->
+
+  <view class='content'>
+    <text class='circle-font'>健身休闲</text>
+
+    <view class='content-array'>
+      <view class='content-block' bindtap='switchToActivity'>
+        <image src='../../images/icon/activity.png' class='photo'></image>
+        <text class='content-font'>召集</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='content'>
+    <text class='circle-font'>家庭分享</text>
+    <view class='content-array'>
+      <view class='content-block' bindtap='switchToPic'>
+        <image src='../../images/icon/pic1.png' class='photo'></image>
+        <text class='content-font'>光影</text>
+      </view>
+    </view>
+  </view>
+
+</view>
+

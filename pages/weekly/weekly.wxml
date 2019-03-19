@@ -1,0 +1,194 @@
+<!--pages/weekly/weekly.wxml-->
+<view class="head"></view>
+
+<view class='input-dynamic'>
+  <van-field
+    value="{{ title }}"
+    placeholder="周报[{{ weekStartDay }}-{{ weekEndDay }}]"
+    placeholder-style="color:	#989898"
+    border="{{ true }}"
+    input-class='input-title'
+    auto-focus="true"
+    focus="true"
+    bind:change="onChangeTitle"
+  />
+
+  <view class='input_content'>
+  请填写本周工作的完成、效果及下周计划
+  </view>
+
+  <view class='contents-block'>
+    <view class='contents-font'>1</view>
+
+    <view class='contents-font'>
+      <view class='item-add-icon'>
+         <input class="item-input" placeholder="完成"  bindinput='onChangeThisWeekComplete' value='{{ thisWeekComplete}}' maxlength='-1' />
+        <image src='../../images/icon/add.png' class='icon-add' bindtap='insert'></image>
+      </view>
+     
+      <view class="line"></view>
+      <input class="item-input" placeholder="效果"  bindinput='onChangeThisWeekEffect' value='{{thisWeekEffect}}' maxlength='-1' data-id="{{ item.id }}"/>
+      <view class="line"></view>
+      <input class="item-input" placeholder="计划"  bindinput='onChangeNextWeekPlan' value='{{nextWeekPlan}}' maxlength='-1' />
+    </view>
+    
+  </view>
+
+
+   <view wx:if="{{ length > 0 }}">
+
+    <view wx:for="{{ contents }}" wx:key="id">
+    <view class='switch1'></view>
+    <view class='contents-block'>
+    <view class='contents-font'>{{ index+2 }}</view>
+
+    <view class='contents-font'>
+      <view class='item-add-icon'>
+         <input class="item-input" value="{{ item.thisWeekComplete }}" maxlength='-1' />
+        <image src='../../images/icon/delete.png' class='icon-add' bindtap='delete'></image>
+      </view>
+     
+      <view class="line"></view>
+      <input class="item-input"  value="{{ item.thisWeekEffect }}" maxlength='-1' data-id="{{ item.id }}"/>
+      <view class="line"></view>
+      <input class="item-input" value="{{ item.nextWeekPlan }}" maxlength='-1' />
+    </view>
+    
+  </view>
+  </view>
+</view>
+
+<!-- ------------- -->
+
+<!-- <view class='contents-block'>
+  <view class='contents-font'>1</view>
+
+  <view class='contents-font'>
+    <van-cell-group>
+      <van-field
+        title="{{ thisWeekComplete }}"
+        placeholder="完成"
+        border="{{ true }}"
+        icon="add-o"
+        data-id="{{ item.id }}"
+        bind:change="onChangeThisWeekComplete"
+        bind:click-icon="insert"
+      />
+      <van-field
+        value="{{ thisWeekEffect }}"
+        placeholder="效果"
+        border="{{ true }}"
+        bind:change="onChangeThisWeekEffect"
+      />
+      <van-field
+        value="{{ nextWeekPlan }}"
+        placeholder="计划"
+        border="{{ true }}"
+        bind:change="onChangeNextWeekPlan"
+      />
+    </van-cell-group>
+  </view>
+    
+</view>
+
+  <view wx:if="{{ length > 0 }}">
+
+    <view wx:for="{{ contents }}" wx:key="id">
+    <view class='switch1'></view>
+<view class='contents-block'>
+      <view class='contents-font'>{{index+2}}</view>
+      <view class='contents-font'>
+        <van-field
+        title='事项'
+        value="{{ item.thisWeekComplete }}"
+        placeholder="完成"
+        icon="delete"
+        border="{{ true }}"
+        data-id="{{ item.id }}"
+        bind:change="onChangeThisWeekComplete"
+        bind:click-icon="delete"
+      />
+      <van-field
+        value="{{ item.thisWeekEffect }}"
+        placeholder="效果"
+        border="{{ true }}"
+        bind:change="onChangeThisWeekEffect"
+      />
+      <van-field
+        value="{{ item.nextWeekPlan }}"
+        placeholder="计划"
+        border="{{ true }}"
+        bind:change="onChangeNextWeekPlan"
+      />
+      </view>
+      
+    </view>
+  </view>
+</view> -->
+
+<view class='lablecheck'>
+  <label class='lable2'>可选项</label>
+</view>
+
+<!-- 组织选择器start -->
+  <picker 
+     bindchange="bindPickerChange" 
+     value="{{index}}" 
+     range="{{organizationArray}}" 
+     wx:if='{{ 1 }}'
+  >
+    <import src ="../pickerOrganization/pickerOrganization.wxml"/>
+    <template is="picker-organization" data="{{ duration:organization, color: organizationSelectedColor }}"/>
+  </picker>
+  <modal hidden="{{hiddenModalInput}}" title="" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
+      <input
+        type='text'
+        placeholder="请输入组织名称" 
+        focus="{{ focus }}" 
+        confirm-hold='{{ true }}'
+        cursor-spacing='350rpx'
+        bindinput='bindModalInput'
+        />  
+  </modal>
+  <!-- 组织选择器end -->
+
+  <!-- <picker bindchange="bindPickerChange" value="{{index}}" range="{{organizationArray}}" wx:if='{{ !isShowOrganization }}'>
+    <van-field
+        value="{{ organizationArray[index] }}"
+        placeholder="请选择组织"
+        label="组织名称"
+        icon="wap-nav"
+        autosize
+        border="{{ true }}"
+    />
+  </picker>
+  <view class='organization' wx:if='{{ isShowOrganization }}'>
+    <van-field
+          value="{{ organization }}"
+          placeholder="请填写组织名称"
+          label="组织名称"
+          icon="wap-nav"
+          autosize
+          border="{{ true }}"
+          bind:change="onChangeOrganization"
+      />
+  </view>
+
+  <modal hidden="{{hiddenModalInput}}" title="" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
+    <input type='text'placeholder="请输入组织名称" bindinput='bindModalInput' auto-focus/>  
+  </modal>  -->
+
+
+  <van-cell-group>
+  <view class='switch1'></view>
+  <van-switch-cell title="公开可见" checked="{{ visibility }}" bind:change="SwitchAChange" />
+  <view class='switch1'></view>
+  <van-switch-cell title="禁止转发" checked="{{ shareVisibility }}" bind:change="SwitchBChange" />
+  <view class='switch2'></view>
+</van-cell-group>
+
+  <van-toast id="van-toast" />
+
+  <button bindtap="submitTap" class='btn'>发布</button>
+
+</view>

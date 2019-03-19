@@ -1,0 +1,77 @@
+<view class="head"></view>
+<van-field
+    value="{{ title }}"
+    placeholder="{{userInfo.nickName}}的照片分享"
+    border="{{ true }}"
+    bind:change="onChangeTitle"
+    placeholder-style="color:	#989898"
+    auto-focus="{{focus}}"
+    focus="{{focus}}"
+    input-class = "van1"
+  />
+<view class="weui-uploader__hd">
+        <view class="weui-uploader__title">请选择图片 {{pics.length}}/9</view>
+        <!-- <view class="weui-uploader__info">{{pics.length}}/9</view> -->
+      </view>  
+<view class="weui-cell">
+  <view class="weui-cell__bd">
+    <view class="weui-uploader">
+      
+      <view class="weui-uploader__bd">
+        <view class="weui-uploader__files">
+          <block wx:for="{{pics}}" wx:for-item="image">
+            <view class="weui-uploader__file">
+              <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" mode='aspectFill'  data-index="{{index}}" bindtap="previewImage"></image>
+            </view>
+          </block>
+        </view>
+        <view class="weui-uploader__input-box {{isShow?'true':'hideTrue'}}">
+          <view class="weui-uploader__input" bindtap="chooseImage"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='lablecheck'>
+  <label class='lable2'>可选项</label>
+</view>
+<!-- 组织选择器 -->
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{organizationArray}}" wx:if='{{ !isShowOrganization }}'>
+    <van-field
+        value="{{ organizationArray[index] }}"
+        placeholder="请填写组织名称"
+        label="组织名称"
+        autosize
+        icon="wap-nav"
+        border="{{ true }}"
+    />
+  </picker>
+<!-- 组织填写框 -->
+  <view class='organization' wx:if='{{ isShowOrganization }}'>
+    <van-field
+          value="{{ organization }}"
+          placeholder="请填写组织名称"
+          label="组织名称"
+          icon="wap-nav"
+          autosize
+          border="{{ true }}"
+          bind:change="onChangeOrganization"
+      />
+  </view>
+
+<van-cell-group>
+  <view class='switch1'></view>
+  <van-switch-cell title="公开可见" checked="{{ visibility }}" bind:change="SwitchAChange" />
+  <view class='switch1'></view>
+  <van-switch-cell title="禁止转发" checked="{{ shareVisibility }}" bind:change="SwitchBChange" />
+  <view class='switch2'></view>
+</van-cell-group>
+
+<van-toast id="van-toast" />
+
+<button bindtap="btnTap" class='btn'>发布</button>
+
+<modal hidden="{{hiddenModalInput}}" title="" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
+    <input type='text'placeholder="请输入组织名称" bindinput='bindModalInput' auto-focus/>  
+  </modal> 

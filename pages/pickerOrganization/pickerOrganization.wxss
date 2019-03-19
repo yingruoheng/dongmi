@@ -1,0 +1,25 @@
+.icon{
+  font-size: 24px;
+  color: #999;
+}
+.icon-right{
+  margin-right: 20rpx;
+  float: right;
+}
+.picker-view{
+  padding-left: 35rpx;
+  height: 44px;
+  line-height: 44px;
+  background-color: #ffffff;
+}
+.picker-text{
+  height: 24px;
+  line-height: 24px;
+  min-height: 24px;
+  font-size: 14px;
+  text-align: center;
+  color: #999999;
+}
+.textSelected{
+  color: red;
+}

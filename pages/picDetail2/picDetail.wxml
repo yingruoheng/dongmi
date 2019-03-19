@@ -1,0 +1,79 @@
+<van-cell 
+     title="{{ title }}"
+     title-class="title"
+     border="{{ false }}"
+      />
+    <view class="userinfo">
+      <image class="userinfo-avatar" src="{{headImg}}" background-size="cover"></image>
+      <view class='userinfo-name-comment'>
+        <text class="">{{nickName}}</text>
+        <text class=''>{{ createtime }}</text>
+      </view>
+      <view class='userinfo-other'>
+        <text class=""></text>
+        <text class='' style='padding-left: 20rpx;'>家庭分享  光影</text>
+      </view>
+      <view style='clear:both;'></view>
+    </view>
+<view class='container'>
+
+<view class="weui-cell">
+  <view class="weui-cell__bd">
+    <view class="weui-uploader">
+      <view class="weui-uploader__bd">
+        <view class="weui-uploader__files">
+          <block wx:for="{{pics}}" wx:for-item="pic">
+            <view class="weui-uploader__file">
+              <image class="weui-uploader__img" src="{{pic}}" data-src="{{pic}}" data-index="{{index}}" bindtap="previewImage" mode='aspectFill'></image>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+ <view class='all-info'>
+      <i class="icon iconfont icon-zuzhi1"></i>
+      <text class='organization'>{{organization}}</text>
+
+      <i class="icon iconfont icon-eye-off"></i>
+      <text class='read'>{{readNum}} </text>
+
+      <i class="icon iconfont icon-dianzan"></i>
+      <text class='like'>{{likeNum}}</text>
+
+      <i class="icon iconfont icon-pinglun"></i>
+      <text class='comment'>{{commentNum}}</text>
+    </view>
+    <view class='switch11'></view>
+   
+
+<view class='action-bottom'>
+          <view class='action' wx:for="{{ comments }}" wx:key="id">
+          <view class='action-image'>
+            <image class="userinfo-avatar-img" src="{{item.headImageUrl}}" background-size="cover"></image>
+          </view>
+          <view class='action-comment'>
+              <text class="action-comment-nickname">{{item.nickName}}</text>
+              <text class='action-comment-content'>{{ item.content }}</text>
+              <text class='action-comment-time'>{{ item.createtime }}</text>
+            </view>
+          <view style='clear: both;'></view>
+      </view>
+    </view>
+<!-- 底部悬浮框 -->
+  <view class="page-bottom" style="position:fixed; bottom:0rpx;width: 100%; height:70rpx;">
+ 
+    <input type="text" class="input-comment" placeholder=" 写评论" value="{{ comment}}" bindconfirm='bindconfirm'/>
+
+    <i class="icon iconfont icon-pinglun" style="font-size:60rpx;color: #8590a6;margin:0 0 0 35rpx;"></i>
+
+    <i class="icon iconfont icon-dianzan" style="font-size:60rpx;color: {{color}};margin:0 0 0 35rpx;" bindtap="likeTap"></i>
+
+    <button open-type='share' class='share-button' wx:if="{{ isAllowShare }}">
+      <i class="icon iconfont icon-fenxiang" style="font-size:60rpx;color: #8590a6;margin:0 0 0 35rpx;"></i>
+    </button>
+    
+  </view>
+</view>

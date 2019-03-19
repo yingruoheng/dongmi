@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+  /* border: solid black 2px; */
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap; 
+}
+.txtview {
+  /* border: solid 2px red;  */
+  position: fixed;
+  bottom:2rpx; 
+  /* height:56rpx; */
+  width: 100%;
+  text-align: left;
+  font-size:32rpx;
+}
+.swiper image{
+  width:100%;
+}
+.swiper {
+  width: 100%;
+}
+.input-txt{
+  height: auto;
+}

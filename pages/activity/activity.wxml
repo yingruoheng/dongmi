@@ -1,0 +1,163 @@
+<view class="head"></view>
+<!-- <view class='head-top'></view> -->
+<view class="input-dynamic">
+
+  <van-field
+      value="{{ activityName }}"
+      placeholder="召集"
+      input-class='input-title'
+      autosize
+      border="{{ false }}"
+      autofocus="autofocus"
+      auto-focus="{{focus}}"
+      focus='true'
+      placeholder-style="{{ placeholderStyleTitle }}"
+      bind:change="onChangeName"
+      bind:blur=''
+    />
+
+  <view class='input_content'>
+    请填写活动时间地点
+  </view>
+
+  <picker 
+    class='time-picker' 
+    mode="multiSelector" 
+    bindchange="bindStartMultiPickerChange" 
+    bindtap='pickerTap' 
+    bindcolumnchange="bindMultiPickerColumnChange" 
+    value="{{multiIndex}}" 
+    range="{{multiArray}}"
+  >
+    <import src ="../pickerView/pickerView.wxml"/>
+    <template is="picker-view" data="{{ duration:startDate, color: dateSelectedColor }}"/>
+    <view class='switch11'></view>
+  </picker>
+
+  <picker range="{{durationArray}}" bindchange='bindChooseDuration' mode='selector' >
+    <import src ="../pickerView/pickerView.wxml"/>
+    <template is="picker-view" data="{{ duration:duration, color: durationSelectedColor }}"/>
+  </picker>
+  <view class='switch11'></view>
+
+  <van-cell 
+     title="{{selectAddress}}" 
+     title-class="{{ locationStyle }}"
+     icon="location" 
+     border="{{ false }}"
+     bindtap='bindLocationTap' 
+     is-link
+     />
+<view class='switch11'></view>
+  <van-field
+      value="{{ location }}"
+      placeholder="详细地址：如道路门牌号，小区等"
+      autosize
+      border="{{ falsse }}"
+      bind:change="onChangeLocation"
+    />
+<view class='input_content'>
+    请填写活动内容
+  </view>
+<view class='input-dynamic'>
+    <view wx:if="{{ length > 0 }}">
+      <view wx:for="{{ contents }}" wx:key="id">
+      <view class='switch11'></view>
+        <van-field
+          value="{{ item.content }}"
+          placeholder="请输入内容"
+          title-width='40px'
+          label='{{ index+1 }}.'
+          disabled='{{ true }}'
+          icon="delete"
+          border="{{ false }}"
+          data-id="{{ item.id }}"
+          bind:change="onChange"
+          bind:click-icon="delete"
+        />
+      </view>
+    </view>
+<view class='switch11'></view>
+    <van-field
+      value="{{ info }}"
+      placeholder="请输入内容"
+      label='{{ length+1 }}.'
+      icon="add-o"
+      title-width='40px'
+      border="{{ true }}"
+      bind:change="onChange"
+      bind:click-icon="insert"
+    />
+  </view>
+  
+  <view class='lablecheck'>
+    <label class='lable2'>可选项</label>
+  </view>
+
+
+  <!-- 组织选择器 -->
+  <!-- <picker 
+    bindchange="bindPickerChange" 
+    value="{{index}}" 
+    range="{{organizationArray}}" 
+    wx:if='{{ !isShowOrganization }}'
+  >
+    <van-field
+        value="{{ organizationArray[index] }}"
+        placeholder="请选择组织"
+        label="组织名称"
+        icon="wap-nav"
+        autosize
+        border="{{ false }}"
+    />
+  </picker>
+  <view class='organization' wx:if='{{ isShowOrganization }}'>
+    <van-field
+          value="{{ organization }}"
+          placeholder="请填写组织名称"
+          label="组织名称"
+          icon="wap-nav"
+          autosize
+          border="{{ true }}"
+          bind:change="onChangeOrganization"
+      />
+  </view>
+
+  <modal hidden="{{hiddenModalInput}}" title="" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
+    <input type='text'placeholder="请输入组织名称" bindinput='bindModalInput' />  
+  </modal> -->
+  <!-- 组织选择器start -->
+  <picker 
+     bindchange="bindPickerChange" 
+     value="{{index}}" 
+     range="{{organizationArray}}" 
+     wx:if='{{ 1 }}'
+  >
+    <import src ="../pickerOrganization/pickerOrganization.wxml"/>
+    <template is="picker-organization" data="{{ duration:organization, color: organizationSelectedColor }}"/>
+  </picker>
+  <modal hidden="{{hiddenModalInput}}" title="" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
+      <input
+        type='text'
+        placeholder="请输入组织名称" 
+        focus="{{ focus }}" 
+        confirm-hold='{{ true }}'
+        cursor-spacing='350rpx'
+        bindinput='bindModalInput'
+        />  
+  </modal>
+  <!-- 组织选择器end -->
+
+  <van-cell-group>
+  <view class='switch11'></view>
+  <van-switch-cell title="公开可见" checked="{{ visibility }}" bind:change="SwitchAChange" />
+  <view class='switch11'></view>
+  <van-switch-cell title="禁止转发" checked="{{ shareVisibility }}" bind:change="SwitchBChange" />
+  <view class='switch2'></view>
+</van-cell-group>
+
+  <van-toast id="van-toast" />
+
+  <button bindtap="submitTap" class='btn'>发布</button>
+
+</view>

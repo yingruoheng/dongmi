@@ -1,0 +1,16 @@
+/* pages/authorization/authorization.wxss */
+.tag-title {
+  margin-top: 10px;
+  text-align: center;
+}
+.logo{
+  /* height: 300rpx;
+  width: 300rpx; */
+}
+.login{
+  margin-top: 20rpx;
+  background-color: #9fe757;
+}
+.back{
+  margin-top: 30rpx;
+}

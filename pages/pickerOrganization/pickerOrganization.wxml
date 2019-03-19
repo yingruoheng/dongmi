@@ -1,0 +1,8 @@
+<template name="picker-organization">
+  <view class='picker-view'>
+    <text style='font-size: 14px;'>组织名称</text>
+    <text class='picker-text' style="color:{{color}}; margin-left: 200rpx;">{{ duration }}</text>
+    <i class='icon iconfont icon-right'></i>
+    <text style='clear: both;'></text>
+  </view>
+</template>

@@ -1,0 +1,51 @@
+<view class="userinfo">
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">我的组织</text>
+    <text class="userinfo-organization" bindtap="addOrganization" >添加组织</text>
+    <i class="icon iconfont icon-join"></i>
+     <text style='clear: both;'></text>
+
+  </view>
+
+  <modal wx:if="{{!addOrganization}}" title="" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
+      <input 
+        type='text' 
+        placeholder='请输入组织名称'
+        value='{{ organization }}'
+        focus="true" 
+        cursor-spacing='350rpx'
+        bindinput='bindModalInput'
+        class='input-border input-organization'
+        />
+        <picker 
+          bindchange="bindPickerChange" 
+          value="{{index}}" 
+          range="{{array}}"
+          class='input-border'
+        >
+          <view class="picker">
+            请选择圈子：{{array[index]}}
+          </view>
+        </picker>
+  </modal>
+<view class="message" wx:if="{{organizationList.length == 0}}">
+  <text>你还没有加入组织</text>
+</view>
+
+<view class="container">
+  <block wx:for="{{organizationList}}" wx:key="{{item.id}}"  wx:for-index="index" wx:for-item="item">
+  <view class="feed-item">
+      <view>
+        <view class='item-container'>
+          <view class='item-container-nicheng item-container-organization'>组织名称：{{item.organization}}</view>
+          <view class='item-container-nicheng item-container-circle'><text>圈</text><text style='margin-left: 50rpx;'>子</text>：{{item.circle}}</view>
+          <view style='clear:both;'></view>
+        </view>
+        <view class='item-delete' bindtap='deleteOrganization' data-eid="{{item.id}}" data-id="{{index}}" >
+            <i class="icon iconfont icon-shanchu"></i>
+          </view>
+          <view style='clear:both;'></view>
+      </view>
+    </view>
+  </block>
+</view>

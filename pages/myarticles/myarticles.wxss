@@ -1,0 +1,168 @@
+/* @import "../../app.wxss"; */
+@import "../template/template.wxss";
+
+
+.item-delete{
+  margin-top: 20rpx;
+  float:right;
+  padding-right: 20rpx;
+  height: 35rpx;
+  line-height: 35rpx;
+}
+.icon-shanchu{
+  font-size: 35rpx;
+}
+.item-title{
+  float:left;
+  height: 35rpx;
+  line-height: 35rpx;
+  padding-bottom:10rpx;
+
+}
+.item-feadback {
+margin-top:20rpx;
+margin-bottom: 20rpx;
+font-size: 26rpx;
+}
+.createtime{
+  font-size:26rpx;
+  color: #8590a6;
+  float:left;
+}
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  /* background: #ffffff; */
+  padding: 0rpx 25rpx 20rpx 30rpx;
+  margin: 0 0 0 0;
+  /* border-top: 0 solid #eee;*/
+  border-bottom: 1rpx solid #dcdcdc; 
+  /* box-shadow: 0 2px 5px #eeeeee; */
+}
+.userinfo-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  /* position:absolute;
+  left: 20rpx;
+  top:10rpx; */
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: rgb(62, 64, 65);
+  font-size: 30rpx;
+    margin-left: 30rpx;
+}
+.feed-item{
+  border-top :1rpx;
+}
+.message{
+  font-size: 30rpx;
+  text-align:center;
+  color: rgb(62, 64, 65);
+  padding-top: 35rpx;
+  
+}
+
+
+
+
+/* .item-feedback{
+  float:left;
+} */
+/* .myfocus{
+   display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #ffffff; 
+  padding: 0rpx 25rpx 20rpx 30rpx;
+  margin: 0 0 0 0;
+  border-top: 0 solid #eee;
+  border-bottom: 1px solid #dcdcdc;
+  box-shadow: 0 2px 5px #eeeeee;
+} */
+/* .focusText{
+  font-size: 40rpx;
+} */
+/* .feed-item{
+  display:flex;
+  flex-direction: column;
+   width: 100%;
+   height: 100rpx;
+  padding: 0rpx 25rpx 30rpx 30rpx;
+  margin: 0 0 0 0;
+} */
+/* .item-all{
+  padding: 20rpx;
+  border-bottom: 1rpx solid #dcdcdc;
+} */
+
+
+/* .title{
+  font-size: 32rpx;
+} */
+/* .title-content{
+  float: left;
+} */
+/* .title-delete{
+  float: right;
+} */
+/* .createtime{
+  font-size: 25rpx;
+  color: #8590a6;
+} */
+/* .more{
+  display: flex;
+  align-items:center;
+  width: 100%;
+  margin: 0 0 0 0;
+  padding: 0rpx 0rpx 100rpx 350rpx;
+} */
+
+/* .actionContent{
+    height: 50rpx;
+   font-size:25rpx;
+  float: left;
+  line-height: 50rpx;
+  color: #8590a6;
+}
+.actionContent>text{
+ padding-right: 10rpx;
+}
+.organization{
+   height: 50rpx;
+   font-size:25rpx;
+  float: left;
+  width: 20%;
+  line-height: 50rpx;
+  color: #8590a6;
+
+}
+/* .message{
+  font-size: 30rpx;
+  text-align:center;
+  color: rgb(62, 64, 65);
+  padding-top: 35rpx;
+  
+} */ 
+/* .item-circle{
+  margin: 0;
+  padding:0;
+  float:right;
+}
+.item-scenario{
+  margin-left: 10rpx;
+  padding-left:10rpx;
+  float:right;
+} */
+
+.item-circle{
+  float: right;
+}
+.item-scenario{
+  float: right;
+  margin-right: 20rpx;
+}
+

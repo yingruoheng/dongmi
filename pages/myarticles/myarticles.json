@@ -1,0 +1,4 @@
+{"usingComponents": {
+    "van-icon": "../../dist/icon/index",
+    "van-toast": "/dist/toast/index"
+  }}

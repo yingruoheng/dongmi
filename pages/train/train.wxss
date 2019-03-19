@@ -1,0 +1,26 @@
+@import "../../libs/common.wxss";
+@import "../pickerOrganization/pickerOrganization.wxss";
+.switch11{
+  border-top:1px solid #D8D8D8;
+}
+.bottom{
+    display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  height: 120rpx;
+}
+
+.duration {
+  background-color: white;
+  height: 100rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  padding-left: 38rpx;
+  font-size: 30rpx;
+  color: #808080;
+  width:100%;
+}
+

@@ -1,0 +1,95 @@
+<!--template.wxml-->
+<wxs module="dateFr" src="../../filter/dateFr.wxs"></wxs>
+
+<template name="recommend-interest">
+  <view class='head-top'></view>
+  <!-- <image class='load-image' src='../../images/load.gif'></image> -->
+  <view scroll-y="true" class="container" enable-back-to-top="true"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+
+  <block wx:for="{{lists}}" wx:key="idx" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+    <view class="feed-item" id="{{item.articleId}}" bindtap="bindItemTap" data-circle='{{item.circle}}' data-scenario='{{item.scenario}}' data-htmlUrl='{{item.htmlUrl}}'
+    data-username='{{item.username}}' data-createtime='{{item.createtime}}' data-title='{{item.title}}'data-headImageUrl='{{item.headImageUrl}}' data-articleId='{{item.articleId}}' data-mdUrl='{{item.mdUrl}}'>
+      <view class="tag-body">
+        <view class="tag-actions">
+          <view class="like">
+            <view class='item-bottom'>
+              <image class='article-like-image' src='{{item.headImageUrl}}'></image>
+            </view>
+            <view class='item-bottom item-username'>
+              {{item.username}}
+            </view>
+          </view>
+            <view class='item-bottom item-time'>
+              <text>{{dateFr.getTimeAgo(now, item.createtime)}}</text>
+            </view>
+        </view>
+      </view>
+      <view class='item-title'>
+        <text>{{item.title}}</text>
+      </view>
+
+<van-toast id="van-toast" />
+
+      <!-- 有图片有摘要的文章显示样式 -->
+      <view class='item-summary' wx:if='{{item.picUrl!="" && item.picUrl!=null && item.summary !="" && item.summary != null}}'>
+        <view class='item-summary-text' style="width:calc(100% - 160rpx)">
+        <text>{{item.summary}}</text>
+        </view>
+        <view>
+        <image class='item-summary-image' src='{{item.picUrl}}'></image>
+        </view>
+      </view>
+      <!-- 有图片无摘要 -->
+      <view class='item-summary' wx:if='{{(item.picUrl!="" && item.picUrl!=null) && (item.summary == "" || item.summary == null)}}'>
+        <view>
+        <image class='item-summary-image' src='{{item.picUrl}}'></image>
+        </view>
+      </view>
+      <!-- 无图片的文章显示样式 -->
+      <view class='item-summary' wx:if='{{item.picUrl=="" || item.picUrl==null}}'>
+        <view class='item-summary-text' style="width:100%">
+        <text>{{item.summary}}</text>
+        </view>
+      </view>
+      
+      <view class='item-feadback'>
+         <i class="icon iconfont icon-zuzhi1"></i>
+      </view>
+      <view class='item-feadback item-organization' wx:if='{{item.organization!="" && item.organization!=null}}'>
+        {{item.organization}}
+      </view>
+      <view class='item-feadback item-organization' wx:if='{{item.organization=="" || item.organization==null}}'>
+        无
+      </view>
+      
+      <view class='item-feadback'>
+         <i class="icon iconfont icon-eye-off"></i>
+      </view>
+      <view class='item-feadback item-space'>
+       {{item.readNum}}
+      </view>
+      
+      <view class='item-feadback'>
+        <i class="icon iconfont icon-dianzan"></i>
+      </view>
+      <view class='item-feadback item-space1'>
+        {{item.starNum}}
+      </view>
+
+      <view class='item-feadback'>
+        <i class="icon iconfont icon-pinglun"></i>
+      </view>
+      <view class='item-feadback'>
+        {{item.commentNum}}
+      </view>
+
+      <view class='item-feadback item-scenario'>
+      {{item.scenario}}
+      </view>
+      <view class='item-feadback item-circle'>
+      {{item.circle}}
+      </view>
+    </view>
+  </block>
+</view>
+</template>

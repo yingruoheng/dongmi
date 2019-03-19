@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "van-radio-group": "/dist/radio-group/index",
+    "van-radio": "/dist/radio/index",
+    "van-field": "/dist/field/index",
+    "van-button": "/dist/button/index",
+    "van-cell": "/dist/cell/index",
+    "van-cell-group": "/dist/cell-group/index",
+    "van-icon": "/dist/icon/index",
+    "van-tag": "/dist/tag/index",
+    "van-panel": "/dist/panel/index",
+    "van-switch-cell": "/dist/switch-cell/index"
+  }
+}

@@ -1,0 +1,152 @@
+<view class="head"></view>
+<!-- <view class='head-top'></view> -->
+<view class="input-dynamic">
+<van-field
+    value="{{ title }}"
+    placeholder="开课啦"
+    border="{{ false }}"
+    input-class='input-title' 
+    focus='true'
+    bind:change="onChangetitle"
+    placeholder-style="{{ placeholderStyleTitle }}"
+    clearable="true"
+    
+    readonly="{{ readonlyBlur }}"
+  />
+  <view class="weui-uploader__hd">
+    <view class="weui-uploader__title">请选择时间地点</view>
+  </view>
+
+ <picker 
+  class='time-picker' 
+  mode="multiSelector" 
+  bindchange="bindStartMultiPickerChange" 
+  bindtap='pickerTap' 
+  bindcolumnchange="bindMultiPickerColumnChange" 
+  value="{{multiIndex}}" 
+  range="{{multiArray}}"
+>
+    <import src ="../pickerView/pickerView.wxml"/>
+    <template is="picker-view" data="{{ duration:startDate, color: dateSelectedColor }}"/>
+  </picker>
+  <view class='switch11'></view>
+  <picker range="{{durationArray}}" bindchange='bindChooseDuration' mode='selector' >
+    <import src ="../pickerView/pickerView.wxml"/>
+    <template is="picker-view" data="{{ duration:duration, color: durationSelectedColor }}"/>
+  </picker>
+
+  <view class='switch11'></view>
+  <van-cell 
+    title="{{selectAddress}}"
+    title-class="{{ locationStyle }}"
+    icon="location"
+    border="{{ false }}"
+    bindtap='bindLocationTap' 
+    is-link
+    />
+  <view class='switch11'></view>
+  <van-field
+    value="{{ additionalAddress }}"
+    placeholder="详细地址：如道路、门牌号、小区等"
+    border="{{ false }}"
+    bind:change="onChangeLocation"
+    clearable="true"
+  />
+
+   <view class="weui-uploader__hd">
+    <view class="weui-uploader__title">请填写内容</view>
+  </view>
+
+<!-- 动态输入框 -->
+  <view class='input-dynamic'>
+    <view wx:if="{{ length > 0 }}">
+      <view wx:for="{{ contents }}" wx:key="id">
+      <view class='switch11'></view>
+        <van-field
+        value="{{ item.content }}"
+        placeholder="请输入内容"
+        label='{{ index+1 }}.'
+        title-width='30px'
+        disabled='{{true}}'
+        icon="delete"
+        border="{{ false }}"
+        data-id="{{ item.id }}"
+        bind:change="onChange"
+        bind:click-icon="delete"
+        />
+      </view>
+    </view>
+
+  <view class='switch11'></view>
+    <van-field
+      value="{{ info }}"
+      placeholder="请输入内容"
+      label='{{length+1}}.'
+      icon="add-o"
+      title-width='30px'
+      border="{{ false }}"
+      bind:change="onChange"
+      bind:click-icon="insert"
+    />
+  </view>
+  <view class='switch11'></view>
+
+<view class="weui-uploader__hd">
+    <view class="weui-uploader__title">可选项</view>
+  </view>
+
+<!-- 组织选择器start -->
+  <picker 
+     bindchange="bindPickerChange" 
+     value="{{index}}" 
+     range="{{organizationArray}}" 
+     wx:if='{{ 1 }}'
+  >
+    <import src ="../pickerOrganization/pickerOrganization.wxml"/>
+    <template is="picker-organization" data="{{ duration:organization, color: organizationSelectedColor }}"/>
+  </picker>
+  <modal hidden="{{hiddenModalInput}}" title="" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
+      <input
+        type='text' 
+        placeholder="请输入组织名称" 
+        focus="{{ focus }}" 
+        confirm-hold='{{ true }}'
+        cursor-spacing='350rpx'
+        bindinput='bindModalInput'
+        />  
+  </modal>
+  <!-- 组织选择器end -->
+<view class='switch11'></view>
+  <van-switch-cell
+  title="每周重复"
+  checked="{{ checkedWeek }}"
+  bind:change="onChangeWeek"
+  />
+<view class='switch11'></view>
+  <van-switch-cell
+    title="每月重复"
+    checked="{{ checkedMonth }}"
+    bind:change="onChangeMonth"
+  />
+ <view class='switch11'></view>
+  <van-switch-cell 
+   title="公开可见" 
+   checked="{{ visibility }}" 
+   bind:change="SwitchAChange" 
+  />
+  <view class='switch11'></view>
+  <van-switch-cell
+    title="禁止转发"   
+    checked="{{ shareVisibility }}" 
+    bind:change="SwitchBChange" 
+  />
+  <view class='switch11'></view>
+  <van-toast id="van-toast" />
+  
+ <view class="bottom">
+  </view>
+
+<!-- <button bindtap="btnTap" class='btn'>发布</button> -->
+  <button formType="submit" class='btn' bindtap='submitTap' id='1'>发布</button>
+
+</view>

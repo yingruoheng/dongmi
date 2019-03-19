@@ -1,0 +1,222 @@
+page {
+  font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+  background: #ffffff;
+}
+.weui-cell {
+  padding: 10px 15px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+}
+.weui-cell_input {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.weui-uploader__hd {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding-bottom: 10px;
+  align-items: center;
+}
+.weui-uploader__title {
+  flex: 1;
+  color: #b2b2b2;
+}
+.weui-uploader__info {
+  color: #b2b2b2;
+}
+.weui-uploader__bd {
+  margin-bottom: -4px;
+  margin-right: -9px;
+  overflow: hidden;
+}
+.weui-uploader__file {
+  float: left;
+  margin-right: 6rpx;
+  margin-bottom: 6rpx;
+}
+.weui-uploader__img {
+  display: block;
+  width: 220rpx;
+  height: 220rpx;
+}
+.weui-uploader__input-box {
+  float: left;
+  position: relative;
+  margin-right: 9px;
+  margin-bottom: 9px;
+  width: 77px;
+  height: 77px;
+  border: 1px solid #d9d9d9;
+}
+.weui-uploader__input-box:before, .weui-uploader__input-box:after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #d9d9d9;
+}
+.weui-uploader__input-box:before {
+  width: 2px;
+  height: 39.5px;
+}
+.weui-uploader__input-box:after {
+  width: 39.5px;
+  height: 2px;
+}
+.weui-uploader__input {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.title{
+  font-size: 60rpx;
+}
+.userinfo{
+  padding-left: 30rpx;
+  padding-top: 10rpx;
+  background: #ffffff;
+  width: 100%;
+
+}
+.userinfo-avatar{
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 30rpx;
+  /* margin-top: 10rpx; */
+  float: left;
+}
+.userinfo-name-comment{
+  float: left;
+  margin-left: 5rpx;
+  line-height: 90rpx;
+}
+.userinfo-other{
+  float: left;
+}
+
+.userinfo-name-comment> text, .userinfo-other > text{
+  display: inherit;
+  height: 20rpx;
+  line-height: 20rpx;
+  font-size:28rpx;
+  color: #808080;
+  margin: 10rpx;
+}
+.space-title{
+  margin-bottom: -20rpx;
+}
+.space-content{
+  margin-top: -20rpx;
+  margin-bottom: -20rpx;
+}
+.space-footer{
+  /* margin-top: -20rpx; */
+}
+
+.all-info{
+  /* margin: 0rpx 0 6rpx 0; */
+  background: #ffffff;
+  /* border-bottom: 1px solid #eee; */
+  text-align: center;
+}
+
+.bottom-space-80{
+  /* height: 180rpx; */
+}
+.all-info text{
+  font-size: 30rpx;
+  color: #8590a6;
+}
+.organization{
+  margin-right: 6rpx;
+}
+.read{
+  margin-right: 6rpx;
+}
+.like{
+  margin-right: 6rpx;
+}
+.page-bottom{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #ffffff;
+}
+.input-comment {
+  margin: 0 0 0 35rpx;
+  padding-left: 30rpx;
+  border-top: 1px solid #8590a6;
+  border-bottom: 1px solid #8590a6;
+  border-right: 1px solid #8590a6;
+  border-left: 1px solid #8590a6;
+  border-radius: 10px;
+}
+/*使用 button::after{ border: none; } 来去除边框*/
+.share-button {
+  background: none !important;
+  color: #818A8F !important;
+  font-size: 25rpx;
+  padding: 0rpx 0rpx 0rpx 0;
+  margin: 0 0 0 0;
+}
+.share-button::after {
+  border: none;
+}
+
+.action{
+  padding-top: 10rpx;
+  background: #ffffff;
+  margin-bottom:12rpx; 
+}
+.action-bottom{
+  margin-bottom: 100rpx;
+}
+.userinfo-avatar-img {
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 30rpx;
+}
+.action-image{
+  float: left;
+  padding-left: 30rpx;
+  padding-top: 24rpx;
+}
+.action-comment{
+  float: left;
+  padding-left: 10rpx;
+}
+
+.action-comment > text{
+  display: inherit;
+  color: #808080;
+}
+.action-comment-nickname{
+  height: 28rpx;
+  line-height: 28rpx;
+  font-size:28rpx;
+  margin: 10rpx; 
+}
+.action-comment-content{
+  height: 32rpx;
+  line-height: 32rpx;
+  font-size:32rpx;
+  margin: 20rpx; 
+}
+.action-comment-time{
+  height: 28rpx;
+  line-height: 28rpx;
+  font-size:28rpx;
+  margin: 10rpx; 
+}
+
+
+

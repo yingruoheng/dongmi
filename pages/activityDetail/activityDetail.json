@@ -1,0 +1,16 @@
+{
+  "usingComponents": {
+    "van-cell": "/dist/cell/index",
+    "van-cell-group": "/dist/cell-group/index",
+    "van-icon": "/dist/icon/index",
+    "van-tag": "/dist/tag/index",
+    "van-tabbar": "/dist/tabbar/index",
+    "van-tabbar-item": "/dist/tabbar-item/index",
+    "van-field": "/dist/field/index",
+    "van-row": "/dist/row/index",
+    "van-col": "/dist/col/index",
+    "van-switch-cell": "/dist/switch-cell/index",
+    "van-toast": "/dist/toast/index",
+    "van-nav-bar": "/dist/nav-bar/index"
+  }
+}

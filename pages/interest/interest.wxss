@@ -1,0 +1,36 @@
+@import "../template/template.wxss";
+
+.container{
+  margin-bottom: 0;
+}
+.interst-List{
+  color: rgba(0, 0, 0, 0.61);
+  text-align: center;
+  border-radius: 20rpx;
+}
+
+.navigator-hover{
+  color: bisque;
+}
+.data-header{
+  background-color: #f0f0f0;
+}
+.data-header-2{
+  margin-top: -10rpx;
+}
+.data-common{
+  height: 85rpx;
+  line-height: 85rpx;
+  float: left; 
+}
+.data-text{
+  color: #0f0f0f;
+  margin-left: 20rpx;
+}
+.data-icon{
+  float: right;
+  margin-right: 20rpx;
+}
+.none-article{
+  padding: 20rpx;
+}

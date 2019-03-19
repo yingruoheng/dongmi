@@ -1,0 +1,103 @@
+@import "../template/template.wxss";
+
+.myfocus{
+   display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #ffffff; 
+  padding: 0rpx 25rpx 20rpx 30rpx;
+  margin: 0 0 0 0;
+  /* border-top: 0 solid #eee;
+  border-bottom: 1rpx solid #dcdcdc; */
+  /* box-shadow: 0 2px 5px #eeeeee; */
+}
+.focusText{
+  font-size: 35rpx;
+}
+
+.item{
+  padding: 20rpx;
+  border-bottom: 1rpx solid #dcdcdc;
+}
+.item-img{
+  float: left;
+  /* width: 70rpx; */
+  /* height: 70rpx; */
+  /* border-radius: 35rpx; */
+  /* height: 86rpx; */
+  /* line-height: 86rpx; */
+  margin-right: 15rpx;
+}
+.item-image{
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 100rpx;
+  border-radius: 50rpx;  
+}
+.item-container{
+  float: left;
+  /* display: flex; */
+  flex-direction: column;
+  margin-left: 10rpx;
+}
+.item-container-nicheng{
+  font-size: 25rpx;
+  color: rgb(62, 64, 65);
+  margin-left: -8rpx;
+}
+.item-container-circle{
+  font-size: 20rpx;
+  color:rgba(0, 0, 0, 0.61);
+}
+.item-container-scenario{
+  font-size: 20rpx;
+  color:rgba(0, 0, 0, 0.61);
+}
+
+.item-delete{
+  float: right;
+}
+
+.message{
+  font-size: 30rpx;
+  text-align:center;
+  color: rgb(62, 64, 65);
+  padding-top: 35rpx;
+  
+}
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  /* background: #ffffff; */
+  padding: 0rpx 25rpx 20rpx 30rpx;
+  margin: 0 0 0 0;
+  /* border-top: 0 solid #eee;*/
+  border-bottom: 1rpx solid #dcdcdc; 
+  /* box-shadow: 0 2px 5px #eeeeee; */
+}
+
+.userinfo-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  /* position:absolute;
+  left: 20rpx;
+  top:10rpx; */
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: rgb(62, 64, 65);
+  font-size: 30rpx;
+    margin-left: 30rpx;
+}
+.container{
+  padding: 0;
+}
+.feed-item{
+  border-top :1rpx;
+}
+.icon-shanchu{
+  font-size: 35rpx;
+}

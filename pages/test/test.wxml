@@ -1,0 +1,13 @@
+<!--pages/test/test.wxml-->
+<button bindtap='switch'>跳转</button>
+
+<view class="page-bottom" style="position:fixed; bottom:10rpx;width: 100%;">
+ 
+    <input class="input-comment" placeholder="写评论" value="{{value}}" bindconfirm='bindconfirm'/>
+    <i class="icon iconfont icon-pinglun" style="font-size:60rpx;color: #8590a6;margin:0 0 0 35rpx;"></i>
+
+    <i class="icon iconfont icon-dianzan" style="font-size:60rpx;color: #8590a6;margin:0 0 0 35rpx;"></i>
+
+    <i class="icon iconfont icon-fenxiang" style="font-size:60rpx;color: #8590a6;margin:0 0 0 35rpx;"></i>
+    
+</view>

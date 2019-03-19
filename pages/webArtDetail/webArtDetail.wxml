@@ -1,0 +1,155 @@
+<import src="../../wxParse/wxParse.wxml" />
+<!-- <import src="../webViewTemplate/webViewTemplate.wxml" /> -->
+<view class='container'>
+  <!-- <view class='feed-item' id="{{post.id}}"> -->
+
+  <view class='feed-item'>
+    <view class='item-title'>
+      {{title}}
+    </view>
+    <view class="tag-body">
+      <view class="tag-actions">
+        <image class='article-like-image' src='{{headimageurl}}'></image>
+      <view class='item-user'>
+        <text class='item-username'>{{username}}</text>
+        <text class='item-time'>{{createtime}}</text>
+
+      </view>
+      <view class='userinfo-other'>
+        <text></text>
+        <text class='' style='padding-left: 20rpx;'>{{circle}}　{{scenario}}</text>
+      </view>
+      </view>
+    </view>
+  </view>
+  <wemark style="padding: 10rpx;" md="{{md}}" true true type="wemark"></wemark>
+  <view class="wxParse" style='padding-bottom:10px'>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  <!-- <template is="web-view" /> -->
+  <!-- <web-view src="https://mp.weixin.qq.com/"></web-view> -->
+  <view class='tag-body'>
+    <view class='tag-actions' bindtap='bindItemTap'>
+      <view class='like'>
+        <view class='zan-icon zan-icon-contact zan-pull-left zan-font-12'></view>
+        <!-- <view class='zan-pull-left zan-font-12'>作者：{{username}}</view> -->
+      </view>
+
+      <view class='comments'>
+          <view class='zan-icon zan-icon-clock zan-pull-left zan-font-12'></view>
+          <view class='zan-pull-left zan-font-12'>
+            <!-- <text>发表时间：{{createtime}}</text> -->
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+ <view>
+    <button class='about-me' open-type="contact">联系客服</button>
+ </view>
+
+<view class='all-info'>
+  <i class="icon iconfont icon-zuzhi1"></i>
+  <text class='organization' wx:if='{{organization!="" && organization!=null}}'>{{organization}}</text>
+  <text class='organization' wx:if='{{organization=="" || organization==null}}'>无</text>
+
+  <i class="icon iconfont icon-eye-off"></i>
+  <text class='read'>{{readNum}} </text>
+
+  <i class="icon iconfont icon-dianzan"></i>
+  <text class='like'>{{likeNum}}</text>
+
+  <i class="icon iconfont icon-pinglun"></i>
+  <text class='comment'>{{commentNum}}</text>
+</view>
+<view class='bottom-space-80'></view>
+
+
+  <view class='comment-list'>
+    <view class='comment' wx:for="{{ comments }}" wx:key="id">
+    <view class="userinfo">
+      <image class="userinfo-avatar" src="{{item.headImageUrl}}" background-size="cover"></image>
+      <view class='userinfo-name-comment'>
+        <text class="userinfo-nickname">{{item.nickName}}</text>
+        <text class='userinfo-comment'>{{ item.content }}</text>
+        <text class='userinfo-comment-time'>{{ item.createtime }}</text>
+      </view>
+    </view>
+  </view>
+  </view>
+
+<van-toast id="van-toast"/>
+<!-- 底部悬浮框 -->
+  <view class="page-bottom" style="position:fixed; bottom:0rpx;width: 100%; height:70rpx;">
+
+    <input type="text" class="input-comment" style='margin-left: 45rpx;' placeholder=" 写评论" value="{{comment}}" bindconfirm='bindconfirm'/>
+
+    <i class="icon iconfont icon-pinglun" style="font-size:60rpx;color: #8590a6;margin:0 0 0 35rpx;"></i>
+
+    <!-- <i class="icon iconfont icon-dianzan" style="font-size:60rpx;color: #8590a6;margin:0 0 0 35rpx;" bindtap="likeTap"></i> -->
+    <i class="icon iconfont icon-dianzan" style="font-size:60rpx;color: #8590a6;margin:0 0 0 35rpx;" ></i>
+
+    <button open-type='share' class='share-button' wx:if="{{ shareVisibility }}">
+      <i class="icon iconfont icon-fenxiang" style="font-size:60rpx;color: #8590a6;margin:0 0 0 35rpx;"></i>
+    </button>
+
+  </view>
+<!-- </view> -->
+</view>
+
+
+
+<!-- <view class='feed-item' id="{{post.id}}">
+
+
+
+  <view class="wxParse" style='padding-bottom:100px'>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+
+  <view class='tag-body'>
+    <view class='tag-actions' bindtap='bindItemTap'>
+      <view class='like'>
+        <view class='zan-icon zan-icon-contact zan-pull-left zan-font-12'></view>
+        <view class='zan-pull-left zan-font-12'>作者：{{author}}</view>
+      </view>
+
+      <view class='comments'>
+          <view class='zan-icon zan-icon-clock zan-pull-left zan-font-12'></view>
+          <view class='zan-pull-left zan-font-12'>
+            <text>发表时间：{{createtime}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <van-cell-group>
+
+    <view wx:for="{{ comments }}" wx:key="id">
+      <view class="userinfo">
+        <image class="userinfo-avatar" src="{{item.headImageUrl}}" background-size="cover"></image>
+        <view class='userinfo-name-comment'>
+          <text class="userinfo-nickname">{{item.nickName}}</text>
+          <text class='userinfo-comment'>{{ item.content }}</text>
+          <text class='userinfo-comment-time'>{{ item.createtime }}</text>
+        </view>
+      </view>
+    </view>
+</van-cell-group>
+
+<van-toast id="van-toast"/>
+底部悬浮框
+  <view class="page-bottom" style="position:fixed; bottom:0rpx;width: 100%; height:70rpx;">
+
+    <input type="text" class="input-comment" placeholder=" 写评论" value="{{comment}}" bindconfirm='bindconfirm'/>
+
+    <i class="icon iconfont icon-pinglun" style="font-size:60rpx;color: #8590a6;margin:0 0 0 35rpx;"></i>
+
+    <i class="icon iconfont icon-dianzan" style="font-size:60rpx;color: #8590a6;margin:0 0 0 35rpx;" bindtap="likeTap"></i>
+
+    <button open-type='share' class='share-button' wx:if="{{ shareVisibility }}">
+      <i class="icon iconfont icon-fenxiang" style="font-size:60rpx;color: #8590a6;margin:0 0 0 35rpx;"></i>
+    </button>
+
+  </view>
+</view> -->

@@ -1,0 +1,88 @@
+/* *index.wxss*/
+[v-cloak]{
+  display: none !important;
+}
+/* .container{
+  padding:0;
+} */
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  /* background: #ffffff; */
+  padding: 0rpx 25rpx 20rpx 30rpx;
+  margin: 0 0 0 0;
+  border-top: 0 solid #eee;
+  border-bottom: 1rpx solid #dcdcdc;
+  /* box-shadow: 0 2px 5px #eeeeee; */
+}
+
+.userinfo-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  /* position:absolute;
+  left: 20rpx;
+  top:10rpx; */
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: rgb(62, 64, 65);
+  font-size: 30rpx;
+    margin-left: 30rpx;
+}
+.num{
+  display: flex;
+  flex-direction: row;
+  width:100%;
+  height: 120rpx;
+  padding: 0rpx 0rpx 10rpx 0rpx;
+  border-top: 0 solid #eee;
+  border-bottom: 10px solid #dcdcdc;
+}
+.second-column{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 0px;
+  padding: 30rpx 20rpx 8rpx 20rpx;
+  align-items: center; 
+  font-size: 30rpx;
+}
+.third-column{
+  padding: 20rpx 0rpx 0rpx 0rpx;
+}
+
+
+
+
+
+.forgetme{
+   /* display: table-cell;  */
+   width: 180rpx; 
+   height:80rpx;
+   /* align-items: center; */
+  background: #ffffff;
+  padding: 35rpx 0rpx 0rpx 22rpx;
+  margin: 80rpx 0rpx 0rpx 270rpx; 
+  border-top:1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  border-left: 1px solid #dcdcdc;
+  border-right: 1px solid #dcdcdc;
+  box-shadow: 0 2px 5px #eeeeee;
+  border-radius: 40px;
+  background:#F2F2F2;
+  /* color: white; */
+  /* font-weight: bold; */
+  text-align: center;
+  vertical-align: middle;
+   font-size: 30rpx;
+}
+.about-me{
+  z-index: 99;
+  width: 100%;
+  top: -44px;
+  height: 44px;
+  opacity: 0.0001;
+}

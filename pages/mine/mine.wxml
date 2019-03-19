@@ -1,0 +1,79 @@
+<!-- index.wxml-->
+<!-- <view class='head-top'></view> -->
+<view class="container more" v-cloak>
+  <view class="userinfo">
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">你好, {{userInfo.nickName}}</text>
+  </view>
+  <view class='num'>
+    <view class='second-column'>
+      <text class="score">0</text>
+      <text class="article">积分</text>
+    </view>
+    <view class='second-column' bindtap='navigatorToMine' data-url='myarticles'>
+      <text class="score">{{articleNum}}</text>
+      <text class="article">文章</text>
+    </view>
+    <view class='second-column' bindtap='navigatorToMine' data-url="focus">
+       <text class="score">{{focusNum}}</text>
+      <text class="article">我关注</text>
+    </view>
+     <view class='second-column' bindtap='navigatorToMine' data-url="attention">
+       <text class="score">{{focusmeNum}}</text>
+      <text class="article">关注我</text>
+    </view>
+  </view>
+  <view class = "third-column">
+    <van-cell-group border="{{false}}">
+      <van-cell title="我的关注" 
+      is-link
+      arrow-direction="down" 
+      border="{{false}}"
+      url="../focus/focus"
+      />
+      <van-cell title="我的文章" 
+      is-link
+      arrow-direction="down" 
+      border="{{false}}"
+      url="../myarticles/myarticles"
+      />
+      <van-cell title="关注我的" 
+      is-link
+      arrow-direction="down" 
+      border="{{false}}"
+      url="../attention/attention"
+      />
+      <van-cell title="我的组织"
+      is-link
+      arrow-direction="down" 
+      border="{{false}}"
+      url="../organization/organization"
+      />
+
+      <van-cell title="联系客服"
+      is-link
+      arrow-direction="down" 
+      border="{{false}}"
+      >
+      
+      </van-cell>
+    </van-cell-group>
+<button class='about-me' open-type="contact"></button>
+    
+  </view>
+  
+ <view id= "ForgetMe" class='forgetme' bindtap='deleteme'>
+  <text>忘记我 ？</text>
+</view> 
+<!-- <navigator target="miniProgram" open-type="exit">退出小程序</navigator> -->
+
+<van-dialog id="van-dialog" />
+<van-toast id="van-toast"/>
+<view class='message' hidden='{{hidden}}'>
+  <text>{{errormsg}}</text>
+</view>
+</view>
+
+
+
+

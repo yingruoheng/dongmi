@@ -1,0 +1,35 @@
+.container {
+  width: 100%;
+  /* border: solid black 2px; */
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap; 
+}
+.txtview {
+  /* border: solid 2px red; */
+  position: fixed;
+  height: auto;
+  width: 100%;
+  text-align: left;
+  bottom: 0rpx;
+  font-size:32rpx;
+}
+.txt{
+  text-overflow:ellipsis;
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-line-clamp:3; /*这个数字是设置要显示省略号的行数*/
+  -webkit-box-orient:vertical;
+  background: #D8D8D8;
+  padding-left:14rpx;
+  padding-top:5rpx;
+   
+}
+.swiper image{
+  width:100%;
+}
+.swiper {
+  width: 100%;
+}

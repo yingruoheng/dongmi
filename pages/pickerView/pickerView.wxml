@@ -1,0 +1,7 @@
+<template name="picker-view">
+  <view class='picker-view'>
+    <text class='picker-text' style="color:{{color}};">{{ duration }}</text>
+    <i class='icon iconfont icon-right'></i>
+    <text style='clear: both;'></text>
+  </view>
+</template>

@@ -1,0 +1,92 @@
+<wxs module="dateFr" src="../../filter/dateFr.wxs"></wxs>
+<!-- <wxs module="dateFriendly" src="../../filter/dateFriendly.wxs"></wxs> -->
+<!-- <i class="icon iconfont icon-shoucang11" style="color: grey;"></i> -->
+
+<!--index.wxml-->
+<!-- 声明需要使用的模板文件 -->
+<import src ="../template/template.wxml"/>
+<view class='recommend-List' wx:if='{{posts[0].articleId == 0 || posts[0].articleId == null || posts[0].articleId == ""}}'>
+  <view>目前还没有推荐文章</view>
+</view>
+  <template is="recommend-interest" data="{{lists:posts, now:now}}"/>
+<!-- </view> -->
+<!-- <view wx:for="{{posts}}"> -->
+  <!-- <template is="recommend-interest" data="{{articleId:item.articleId, circle:item.circle, scenario:item.scenario, htmlUrl:item.htmlUrl, username:item.username, createtime:item.createtime, headImageUrl:item.headImageUrl, title:item.title, picUrl:item.picUrl, summary:item.summary, organization:item.organization, readNum:item.readNum, starNum:item.starNum, commentNum:item.commentNum}}"/> -->
+
+
+
+<!-- <view scroll-y="true" class="container" enable-back-to-top="true"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+
+  <block wx:for="{{posts}}" wx:key="idx" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+    <view class="feed-item" id="{{item.articleId}}" bindtap="bindItemTap" data-circle='{{item.circle}}' data-scenario='{{item.scenario}}' data-htmlUrl='{{item.htmlUrl}}' 
+    data-username='{{item.username}}' data-createtime='{{item.createtime}}'>
+      <view class="tag-body">
+        <view class="tag-actions">
+          <view class="like">
+            <view class='item-bottom'>
+              <image class='article-like-image' src='{{item.headImageUrl}}'></image>
+            </view>
+            <view class='item-bottom item-username'>
+              {{item.username}}
+            </view>
+          </view>
+            <view class='item-bottom item-time'>
+              <text>{{dateFr.getTimeAgo(now, item.createtime)}}</text>
+            </view>
+        </view>
+      </view>
+      <view class='item-title'>
+        <text>{{item.title}}</text>
+      </view>
+
+<van-toast id="van-toast" />
+
+      有图片的文章显示样式
+      <view class='item-summary' wx:if='{{item.picUrl!="" && item.picUrl!=null}}'>
+        <view class='item-summary-text' style="width:calc(100% - 160rpx)">
+        <text>{{item.summary}}</text>
+        </view>
+        <view>
+        <image class='item-summary-image' src='{{item.picUrl}}'></image>
+        </view>
+      </view>
+      无图片的文章显示样式
+      <view class='item-summary' wx:if='{{item.picUrl=="" || item.picUrl==null}}'>
+        <view class='item-summary-text' style="width:100%">
+        <text>{{item.summary}}</text>
+        </view>
+      </view>
+      
+      <view class='item-feadback'>
+         <i class="icon iconfont icon-zuzhi1"></i>
+      </view>
+      <view class='item-feadback item-organization' wx:if='{{item.organization!="" && item.organization!=null}}'>
+        {{item.organization}}
+      </view>
+      <view class='item-feadback item-organization' wx:if='{{item.organization=="" || item.organization==null}}'>
+        无
+      </view>
+      
+      <view class='item-feadback'>
+         <i class="icon iconfont icon-eye-off"></i>
+      </view>
+      <view class='item-feadback item-space'>
+       {{item.readNum}}
+      </view>
+      
+      <view class='item-feadback'>
+        <i class="icon iconfont icon-dianzan"></i>
+      </view>
+      <view class='item-feadback item-space1'>
+        {{item.starNum}}
+      </view>
+
+      <view class='item-feadback'>
+        <i class="icon iconfont icon-pinglun"></i>
+      </view>
+      <view class='item-feadback'>
+        {{item.commentNum}}
+      </view>
+    </view>
+  </block>
+</view> -->

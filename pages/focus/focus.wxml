@@ -1,0 +1,36 @@
+<view class="userinfo">
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">我的关注</text>
+  </view>
+<!-- <view class="myfocus">
+  <text class="focusText">我的关注</text>
+</view> -->
+<view class="message" wx:if="{{interestList.length == 0}}">
+  <text>你还没有关注的对象</text>
+</view>
+<view class="container">
+  <block wx:for="{{interestList}}" wx:key="{{item.id}}"  wx:for-index="index" wx:for-item="item">
+    <view class="feed-item">
+      <view>
+        <view class='item-img'>
+          <image class='item-image' src='{{item.toUserImage}}'></image>
+        </view>
+        <view class='item-container'>
+          <view class='item-container-nicheng'>
+            {{item.toUsername}}
+          </view>
+          <view class='item-container-circle'>
+            <text style=''>圈子：{{item.circle}}</text>
+          </view>
+          <view class='item-container-scenario'>
+            <text>场景：{{item.scenario}}</text>
+          </view>
+        </view>
+        <view class='item-delete' bindtap='deleteInterest' data-eid="{{item.id}}" data-id='{{index}}'>
+            <i class="icon iconfont icon-shanchu"></i>
+          </view>
+          <view style='clear:both;'></view>
+      </view>
+    </view>
+  </block>
+</view>

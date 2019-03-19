@@ -1,0 +1,123 @@
+<view class="userinfo">
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">我的文章</text>
+  </view>
+
+<!-- <view class="myfocus">
+  <text class="focusText">我的文章</text>
+</view> -->
+<view class="message" wx:if="{{articleList.length == 0 && isShow}}">
+  <text>您还没发表过文章，快去发表文章吧</text>
+</view>
+<view class="container">
+  <block wx:for="{{articleList}}" wx:key="item.articleId" wx:for-index="index" wx:for-item="item">
+    <view class="feed-item" >
+      <view class="first-column">
+        <view class="item-title" bindtap='detail' data-articleId='{{item.articleId}}' data-circle='{{item.circle}}' data-scenario='{{item.scenario}}' data-htmlurl='{{item.htmlUrl}}'
+         data-username='{{item.username}}' data-createtime='{{item.createtime}}' data-id='{{index}}'>
+          <text>{{item.title}}</text>
+       </view>
+       <view class='item-delete' bindtap='deleteArticle' data-userId="{{item.userId}}" data-articleId="{{item.articleId}}" data-id='{{index}}'>
+         <i class="icon iconfont icon-shanchu"></i>
+       </view>
+       <view style='clear: both;'></view>
+      </view>
+      
+      <view class="articleAction">
+      <view class='item-feadback'>
+         <i class="icon iconfont icon-zuzhi1"></i>
+      </view>
+      <view class='item-feadback item-organization' wx:if='{{item.organization!="" && item.organization!=null}}'>
+        {{item.organization}}
+      </view>
+      <view class='item-feadback item-organization' wx:if='{{item.organization=="" || item.organization==null}}'>
+        无
+      </view>
+        <view class="item-feadback">
+          <i class="icon iconfont icon-eye-off"></i>
+        </view>
+        <view class="item-feadback item-space">{{item.readNum}}</view>
+
+        <view class="item-feadback">                           
+          <i class="icon iconfont icon-dianzan"></i>
+        </view>
+        <view class="item-feadback item-space1">
+          {{item.starNum}}
+        </view>
+      
+         <view class="item-feadback">
+          <i class="icon iconfont icon-pinglun" ></i>
+        </view>
+          <view class="item-feadback item-space1">
+            {{item.commentNum}}
+          </view>
+        <view style='clear: both;'></view>
+      </view>
+      <view class='content-time-icon'>
+        <view class='createtime'>
+          <text>{{item.createtime}}</text>
+        </view>
+         <view class='createtime item-circle'>
+           {{item.scenario}}
+        </view>
+        <view class='createtime item-scenario'>
+          {{item.circle}}
+        </view>
+      </view>
+    </view>
+  </block>
+  
+</view>
+
+
+
+
+<!-- <view class="myfocus">
+  <text class="focusText">我的文章</text>
+</view>
+<view class="message" wx:if="{{articleList.length == 0}}">
+  <text>您还没发表过文章，快去发表文章吧</text>
+</view>
+<view class="container">
+  <block wx:for="{{articleList}}" wx:key="item.articleId" wx:for-index="index" wx:for-item="item">
+    <view class="item-all">
+      <view class="first-column">
+        <view class="title title-content" bindtap='detail' data-articleId='{{item.articleId}}' data-circle='{{item.circle}}' data-scenario='{{item.scenario}}' data-htmlurl='{{item.htmlUrl}}'
+         data-username='{{item.username}}' data-createtime='{{item.createtime}}' data-id='{{index}}'>
+          <text>{{item.title}}</text>
+       </view>
+       <view class='title-delete' bindtap='deleteArticle' data-userId="{{item.userId}}" data-articleId="{{item.articleId}}" data-id='{{index}}'>
+         <i class="icon iconfont icon-shanchu"></i>
+       </view>
+       <view style='clear: both;'></view>
+      </view>
+      
+      <view class="articleAction">
+        <view class="actionContent">                           
+          <i class="icon iconfont icon-dianzan-yuanshijituantubiao"></i>
+          <text>{{item.starNum}}</text>
+        </view>
+        <view class="actionContent">
+          <i class="icon iconfont icon-eye-off"></i>
+          <text>{{item.readNum}}</text>
+        </view>
+         <view class="actionContent">
+          <i class="icon iconfont icon-pinglun" ></i>
+          <text>{{item.commentNum}}</text>
+        </view>
+        <view class="organization" wx:if="{{item.organization}}">
+          <i class="icon iconfont icon-zuzhi" ></i>
+          <text> {{item.organization}}</text>
+        </view>
+        <view style='clear: both;'></view>
+      </view>
+      <view class='content-time-icon'>
+        <view class='createtime'>
+          <text>{{item.createtime}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+  
+</view>
+ -->

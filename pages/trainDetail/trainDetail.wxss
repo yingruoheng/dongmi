@@ -1,0 +1,113 @@
+/* @import "../template/template.wxss"; */
+@import "../../libs/common.wxss";
+.container {
+  margin: 0;
+}
+
+page{
+  background: #ffffff;
+}
+.title{
+  font-size: 45rpx;
+}
+.userinfo{
+  padding-left: 30rpx;
+  background: #ffffff;
+}
+.userinfo-avatar{
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 30rpx;
+  /* margin-top: 10rpx; */
+  float: left;
+}
+.userinfo-name-comment{
+  float: left;
+  margin-left: 5rpx;
+  line-height: 90rpx;
+}
+.userinfo-other{
+  float: left;
+}
+
+.userinfo-name-comment> text, .userinfo-other > text{
+  display: inherit;
+  height: 20rpx;
+  line-height: 20rpx;
+  font-size:28rpx;
+  color: #808080;
+  margin: 10rpx;
+}
+
+.all-info{
+  background: #ffffff;
+  text-align: center;
+  padding-top: 20rpx;
+}
+
+.all-info text{
+  font-size: 30rpx;
+  color: #8590a6;
+}
+.organization{
+  margin-right: 6rpx;
+}
+.read{
+  margin-right: 6rpx;
+}
+.like{
+  margin-right: 6rpx;
+}
+.switch11{
+  border-top:1px solid #D8D8D8;
+  padding-bottom: 20rpx;
+}
+
+.input-comment {
+  padding-left: 20rpx;
+  margin: 0 0 0 35rpx;
+  border-top: 1px solid #8590a6;
+  border-bottom: 1px solid #8590a6;
+  border-right: 1px solid #8590a6;
+  border-left: 1px solid #8590a6;
+  border-radius: 10px;
+}
+
+.page-bottom{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #ffffff;
+}
+
+
+/*使用 button::after{ border: none; } 来去除边框*/
+.share-button {
+  background: none !important;
+  color: #818A8F !important;
+  font-size: 25rpx;
+  padding: 0rpx 0rpx 0rpx 0;
+  margin: 0 0 0 0;
+}
+.share-button::after {
+  border: none;
+}
+
+
+.action{
+  padding-top: 10rpx;
+  background: #ffffff;
+}
+.action-bottom{
+  margin-bottom: 100rpx;
+}
+.userinfo-avatar-img {
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 30rpx;
+}
+.action-image{
+  float: left;
+  padding-left: 30rpx;
+  padding-top: 24rpx;
+}

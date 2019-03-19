@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "van-field": "/dist/field/index",
+    "van-icon": "/dist/icon/index",
+    "van-row": "/dist/row/index",
+    "van-col": "/dist/col/index",
+    "van-cell": "/dist/cell/index",
+    "van-cell-group": "/dist/cell-group/index",
+    "van-toast": "/dist/toast/index",
+    "van-switch-cell": "/dist/switch-cell/index"
+  }
+}

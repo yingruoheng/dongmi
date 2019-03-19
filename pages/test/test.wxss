@@ -1,0 +1,18 @@
+/* pages/test/test.wxss */
+.page-bottom{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.input-comment {
+  /* width: 40%; */
+  background: #ffffff;
+  /* padding: 10rpx 25rpx 10rpx 0; */
+  /* margin: 0 0 0 35rpx; */
+  border-top: 1px solid #8590a6;
+  border-bottom: 1px solid #8590a6;
+  border-right: 1px solid #8590a6;
+  border-left: 1px solid #8590a6;
+  border-radius: 15px;
+}

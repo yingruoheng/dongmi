@@ -1,0 +1,14 @@
+<view class='container'>
+  <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" duration="{{duration}}" bindchange="bindchange" circular="{{circular}}" current="{{num}}" style="height:{{height}}rpx;">
+    <block wx:for="{{pics}}">
+      <swiper-item>
+        <image src="{{item}}" mode="aspectFit" bindload="imageLoad" class="itemimage" style="height:{{height}}rpx;width:{{imgwidth}}rpx;" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+  <view class="txtview">
+    <van-cell-group>
+      <van-field maxlength="48" value="{{content}}" type="textarea" placeholder="请输入配文（限48字以内...）" autosize border="{{ false }}" bind:change="slid"/>
+    </van-cell-group>
+  </view>

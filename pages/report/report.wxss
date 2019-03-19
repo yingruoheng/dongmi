@@ -1,0 +1,26 @@
+/* pages/detail/detail.wxss */
+@import "../../wxParse/wxParse.wxss";
+
+.feed-item{
+  padding: 30rpx 30rpx 20rpx;
+  margin: 0rpx 0 6rpx 0;
+  background: #ffffff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 5px #eeeeee;
+}
+
+.feed-item .tag-body{
+  padding: 10rpx 0 0 0;
+  line-height: 28rpx;
+  color: #5b5b5b;
+}
+.feed-item  .tag-actions{
+  padding: 10rpx 0  0;
+  color: #a0acac;
+}
+.feed-item  .tag-actions view{
+  display: inline-block;
+  vertical-align: text-bottom;
+  padding: 0 10rpx 0 0;
+}

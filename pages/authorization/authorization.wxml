@@ -1,0 +1,12 @@
+
+<view wx:if="{{canIUse}}">
+  <view class='tag-title'>有用、智能、助手</view>
+  <view>
+    <!-- <image class='logo' mode='aspectFit' src='../../images/dongmi2.jpg'></image> -->
+    <button class='login' open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo">授权登录</button>
+    <button class='back' bindtap='switchToIndex'>返回首页</button>
+    <!-- <button bindtap='navigateBack' class="zan-btn">返回首页</button> -->
+  </view>
+</view>
+<view wx:else style='text-align:center;margin-top:50rpx'>
+  您的微信版本过低，请升级后再次体验</view>

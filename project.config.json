@@ -1,0 +1,68 @@
+{
+	"description": "Project configuration file",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.3.0",
+	"appid": "wxf6cf38cc52fb2bf0",
+	"projectname": "v1.13",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 1,
+			"list": [
+				{
+					"id": -1,
+					"name": "share",
+					"pathName": "pages/test/test",
+					"query": "user=123",
+					"scene": "1044",
+					"shareInfo": {
+						"groupName": "测试模拟群0",
+						"shareName": "o8rzLy7EceT2ihz9dmZzcgcX_GQ1hhycagLt6a59BUk@cr4dev",
+						"shareKey": "krj0u8XpsoXjZtDUnUDts-ZZH4h8uboH9-jriagsDEbwscO0336xedgnNB49SPzKnVjPr-YLKcl4fW2EbPNULg~~"
+					}
+				},
+				{
+					"id": 1,
+					"name": "群分享",
+					"pathName": "pages/weeklyDetail/weeklyDetail",
+					"query": "articleId=1000000998",
+					"scene": "1044",
+					"shareInfo": {
+						"groupName": "测试模拟群0",
+						"shareName": "o8rzLy7EceT2ihz9dmZzcgcX_GQ1hhycagLt6a59BUk@cr4dev",
+						"shareKey": "7S9jqGLVARjIklIEmyKTYWj4THnJfDixAgffpA2hzFCx4i9eiq0iW7t8CLvAtNhhm-CPfrP2adBLbOtTkybatw~~"
+					}
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,22 @@
+<view class="container">
+  <view class='zan-panel-title'>欢迎联系我们</view>
+
+  <view class="zan-panel">
+    <view class="zan-cell">
+      <view>邮箱：</view>
+      <view class='zan-text-underline zan-c-blue' data-index='{{email}}' bindtap="copyDataTap">{{email}}</view>
+    </view>
+
+    <view class="zan-cell">
+      <view>微信公众号：</view>
+      <view class='zan-text-underline zan-c-blue' data-index='{{wechat}}' bindtap="copyDataTap">{{wechat}}</view>
+    </view>
+    
+    
+    <view class="zan-cell">
+      <view>Gitlab：</view>
+      <view class='zan-text-underline zan-c-blue ' bindtap="copyDataTap" data-index='{{github}} '>{{gitlab}}</view>
+    </view>
+    
+  </view>
+</view>

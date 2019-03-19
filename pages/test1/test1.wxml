@@ -1,0 +1,4 @@
+<!--pages/test1/test1.wxml-->
+<text>pages/test1/test1.wxml</text>
+
+<button bindtap='switch'>跳转</button>
